@@ -1,3 +1,41 @@
+/* reset ================================ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #2d3133;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+input {
+  background-color: transparent;
+  outline-width: 0;
+}
+
+form input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}
+
+
 /* 共通レイアウト ================================ */
 body {
   color: black;
@@ -12,7 +50,11 @@ body {
   width: 100%;
   height: auto;
   min-height: 100%;
-  background-color: white;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: cover;
+  background-image: url("/KLO-top.jpg");
 }
 
 .container {
@@ -22,6 +64,58 @@ body {
   padding-right: 15px;
   clear: both;
 }
+
+/* ヘッダー ================================ */
+header {
+  height: 64px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  background-color: rgb(210, 210, 210);
+}
+
+.header-logo {
+  float: left;
+  padding-left: 20px;
+  color: white;
+  font-size: 22px;
+  line-height: 64px;
+  a{
+   color: white;
+   font-size: 22px;
+ }
+}
+
+
+
+.header-menus {
+  float: right;
+  padding-right: 20px;
+  li {
+    float: left;
+    line-height: 64px;
+    font-size: 13px;
+    color: black;
+    padding-left: 15px;
+  }
+  a {
+    float: left;
+    font-size: 13px;
+    color: white;
+  }
+  .fa {
+    padding-right: 5px;
+  }
+  input[type="submit"] {
+    padding: 0 20px;
+    float: left;
+    line-height: 64px;
+    color: black;
+    margin: 0;
+    font-size: 13px;
+  }
+}
+
 
 /* top===================================*/
 .top-main {
@@ -33,11 +127,7 @@ body {
   height: auto;
   min-height: 100%;
   color: gold;
-  background-color: black;
-  background-repeat: no-repeat;
-  background-position: center 50%;
-  background-size: cover;
-  background-image: url("/KLO-top.jpg");
+
 }
 
 .top-wrapper {
@@ -64,4 +154,60 @@ body {
     opacity: 0.5;
     font-size: 20px;
   }
+}
+
+
+
+/* フォーム================================ */
+.form {
+  max-width: 600px;
+  margin: 60px 0 20;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  input {
+    width: 100%;
+    border: 1px solid #d8dadf;
+    padding: 10px;
+    color: #57575f;
+    font-size: 16px;
+    letter-spacing: 2px;
+    border-radius: 30px;
+  }
+  textarea {
+    width: 100%;
+    min-height: 110px;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  input[type="submit"] {
+    background-color: rgb(210, 210, 210);
+    color: black;
+    cursor: pointer;
+    font-weight: 300;
+    width: 120px;
+    border-radius: 50px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    float: right;
+  }
+}
+
+.form-heading {
+  font-weight: 300;
+  text-align: center;
+  font-size: 30px;
+  color: black;
+}
+
+.form-body {
+  padding: 30px;
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.form-error {
+  color: #ff4d75;
 }
