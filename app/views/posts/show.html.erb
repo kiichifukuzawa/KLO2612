@@ -1,16 +1,20 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
-      <div class="post-user-name">
-        <img src="<%= "/user_images/#{@user.image_name}" %>">
-        <%= link_to(@user.name, "/users/#{@user.id}") %>
+      <div class="post-header">
+        <div class="post-user-icon">
+          <img src="<%= "/user_images/#{@user.image_name}" %>">
+        </div>
+        <div class="post-user-name">
+          <%= link_to(@user.name, "/users/#{@user.id}") %>
+        </div>
       </div>
-      <div class="post-show-image">
-        <img src="<%= "/user_images/#{@post.post_image}" %>">
+      <div class="post-image">
+        <img src="<%= "/post_images/#{@post.post_image}" %>">
       </div>
-      <div class="post-show-content">
+      <div class="post-content">
         <%= @post.content %>
-      </div>
+      </div>  
       <!-- いいね機能 -->
       <div class="post-likes">
         <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
