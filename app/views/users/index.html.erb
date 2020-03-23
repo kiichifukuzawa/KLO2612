@@ -1,13 +1,19 @@
 <div class="main users-index">
   <div class="container">
-    <% @users.each do |user| %>
-      <div class="users-index-item">
-        <div class="user-left">
-          <img src="<%= "/user_images/#{user.image_name}" %>">
+    <% if @users.count != 0 %>
+      <% @users.each do |user| %>
+        <div class="users-index-item">
+          <div class="user-left">
+            <img src="<%= "/user_images/#{user.image_name}" %>">
+          </div>
+          <div class="user-right">
+            <%= link_to(user.name, "/users/#{user.id}") %>
+          </div>
         </div>
-        <div class="user-right">
-          <%= link_to(user.name, "/users/#{user.id}") %>
-        </div>
+      <% end %>
+    <% else %>
+      <div class="none-users-message">
+        <h1>ユーザーがいません</h1>
       </div>
     <% end %>
   </div>

@@ -54,6 +54,24 @@
   }
 }
 
+.none-posts-message {
+  padding: 100px 0 ;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  color: gold;
+  h1 {
+    height: 80px;
+    font-family:serif;
+    font-size: 70px;
+    font-weight: 100;
+    margin: 0;
+  }
+}
+
 /* posts/show ================================ */
 .posts-show form {
   display: inline;
