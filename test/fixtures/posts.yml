@@ -3,7 +3,9 @@
 one:
   post_image: MyString
   content: MyText
+  user: one
 
 two:
   post_image: MyString
   content: MyText
+  user: two

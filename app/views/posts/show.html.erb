@@ -14,7 +14,7 @@
       </div>
       <div class="post-content">
         <%= @post.content %>
-      </div>  
+      </div>
       <!-- いいね機能 -->
       <div class="post-likes">
         <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>

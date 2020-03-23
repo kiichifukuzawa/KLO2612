@@ -24,12 +24,10 @@ before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
   def create
     @post = Post.new(
       content: params[:content],
-      user_id: @current_user.id,
-      post_image: params[:post_image]
+      post_image: params[:post_image],
     )
-
+    @post.user_id = current_user.id
     if @post.save
-
       flash[:notice] = "投稿を作成しました"
       redirect_to("/posts/index")
     else

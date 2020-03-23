@@ -1,4 +1,11 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  # アソシエーション 後ろはもしユーザーが消えたらその投稿も消えるようにする
+  has_many :posts, dependent: :destroy
+
   # passwordを暗号化する
 has_secure_password
 validates :name, {presence: true}
