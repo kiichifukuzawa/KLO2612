@@ -12,7 +12,8 @@
            </div>
          </div>
          <div class="post-image">
-           <img src="<%= "/post_images/#{post.post_image}" %>">
+           <%= image_tag post.post_image.url %>
+           <!-- <img src="<<%= "/post_images/#{post.post_image}" %>"> -->
          </div>
          <div class="post-content">
            <%= link_to("メッセージへ", "/posts/#{post.id}") %>

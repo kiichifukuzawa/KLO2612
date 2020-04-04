@@ -27,6 +27,14 @@ before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
       post_image: params[:post_image],
     )
     @post.user_id = current_user.id
+
+    # 画像を保存する処理
+    if params[:image]
+      @post.post_image = params[:image]
+      image = params[:image]
+      File.binwrite("public/post_images/#{@post.post_image}", image.read)
+    end
+
     if @post.save
       flash[:notice] = "投稿を作成しました"
       redirect_to("/posts/index")
@@ -48,7 +56,7 @@ before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
 
     # 画像を保存する処理
     if params[:image]
-      @post.post_image = "#{@user.id}post.jpg"
+      @post.post_image = params[:image]
       image = params[:image]
       File.binwrite("public/post_images/#{@post.post_image}", image.read)
     end

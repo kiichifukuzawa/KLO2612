@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   #validates :user_id, {presence: true}
   # usersアソシエーション
   belongs_to :user
+  mount_uploader :post_image, Imageuploader
 
   def user
     return User.find_by(id: self.user_id)
